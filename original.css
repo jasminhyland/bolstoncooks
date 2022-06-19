@@ -1,0 +1,189 @@
+/*
+COLOR PALLETE
+coolors.co/af3800-fe621d-fd5200-00cfc1-00ffe7
+#FD5200 International Orange Space
+#FE621D Orange Red
+#00CFC1 Medium Turqiouse
+#F4EDED Snow
+#877666 Shadow
+#EBF5EE Mint Cream
+#FFFFE8 Beige
+*/
+
+/* ----GLOBAL STYLES-------*/
+
+/*for box fixing so can float and reamin the correct sixe- similar to initially setting to 0*/
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after{
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #F4EDED /*colour of text*/
+}
+
+img {
+  width: 300px; /*reduces pixels to 300 from 600 to keep quality*/
+}
+
+a {
+  color: #877666 ; /*colour of links*/
+}
+
+a:hover {
+  text-decoration: none; /*removes under line when hover over text*/
+}
+
+h1{
+  font-size: 90px
+}
+
+h2 {
+  font-size: 40px;
+  padding: 10px
+}
+
+h1, h2 {
+  font-family: 'Courgette', cursive;
+  font-weight: 400;
+  line-height: 1;
+  margin: 0;
+}
+
+.content-wrap {
+  max-width: 1000px; /*if make smaller site fits to page*/
+  width: 85%; /*when re-size the site info always takes up 85%*/
+  margin: 0 auto;
+  padding: 60px 0;
+}
+
+.content-wrap-2 {
+  max-width: 1000px; /*if make smaller site fits to page*/
+  width: 85%; /*when re-size the site info always takes up 85%*/
+  margin: 0 auto;
+  padding-bottom: 10px;
+  padding-top: 80px;
+}
+
+h3 {
+  margin-bottom: 0;
+}
+
+/*acting on work experience and education - example of using sibling selectors as will affect
+only the p that is right after h3*/
+.item-details h3 + p {
+  font-style: italic;
+}
+
+/*affects all after h3*/
+.item-details h3 ~ p {
+  margin: 0;
+}
+
+/*child element slection - only child selectors within divider section
+how could do it if was setting both to same colour however as doing different
+have set it in subsequent sections
+.divider > section {
+  border-bottom: 1px dashed #464D77;
+  padding: 25px 0;
+}*/
+
+/*last element of section*/
+.divider > section:last-of-type {
+  border-bottom: none; /*removes line after last in list*/
+}
+
+
+/* ---------ABOUT / PROFILE ---------------*/
+header {
+  /*background: #FE621D;*/
+    color: #F4EDED;
+    background-image: url(food_wallpaper.jpeg);
+    background-size: cover;
+    background-postion: top right;
+    padding-top: 200px
+}
+
+.header h1{
+  line-height: 1.5;
+}
+
+
+/* ----PROJECTS / PORTFOLIO-------*/
+.projects {
+  background: #FFFFE8;
+  color: #877666;
+}
+
+
+/* ----CONTACT INFO / SOCIAL MEDIA------*/
+
+footer{
+  background: #464D77;
+}
+
+.contact-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.contact-list a {
+  padding: 15px;
+  display: inline-block;
+}
+
+
+/*-----------------RESPONSIVE DESIGN----------------*/
+
+/*from first break point as seen on inspect tools*/
+
+@media screen and (min-width: 570px){
+  /*this makes one column to help with changing width
+  float only applies at greater than 570 px*/
+
+  header, footer {
+      text-align: center;
+  }
+
+  .project-item img{
+    /*float: left;
+    margin-right: 20px;*/
+    width: 100%
+    height: auto;
+  }
+
+
+  /*using grid container*/
+  .job-item {
+    display:grid;
+    grid-template-columns: 1fr 2fr; /*second column twice size of first*/
+    column-gap: 20px;
+    border-bottom: 1px dashed #464D77;
+    padding: 25px 0;
+  }
+
+  .contact-list {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+
+@media screen and (max-width: 569px){
+
+  h1 {
+    font-size: 60px
+  }
+
+  .contact-list a {
+    padding: 5px;
+  }
+
+}
